@@ -13,7 +13,9 @@ def root():
     return {"mensaje": "API de Venta de Entradas Operativa 🎟️"}
 
 
-# CRUD
+
+# CRUD de Recintos
+
 @app.post("/recintos/", response_model=schemas.Recinto)
 def crear_recinto(recinto: schemas.RecintoCreate, db: Session = Depends(get_db)):
     db_recinto = models.Recinto(**recinto.dict())
@@ -52,8 +54,7 @@ def eliminar_recinto(id: int, db: Session = Depends(get_db)):
     return {"mensaje": "Recinto eliminado"}
 
 
-
-# EVENTOS
+# CRUD de eventos
 
 @app.post("/eventos/", response_model=schemas.Evento)
 def crear_evento(evento: schemas.EventoCreate, db: Session = Depends(get_db)):

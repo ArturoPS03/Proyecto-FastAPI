@@ -12,7 +12,7 @@ class RecintoCreate(RecintoBase):
 class Recinto(RecintoBase):
     id: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class EventoBase(BaseModel):
@@ -28,7 +28,7 @@ class Evento(EventoBase):
     id: int
     tickets_vendidos: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class CompraRequest(BaseModel):
