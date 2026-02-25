@@ -13,7 +13,6 @@ def root():
     return {"mensaje": "API de Venta de Entradas Operativa 🎟️"}
 
 
-
 # CRUD de Recintos
 
 @app.post("/recintos/", response_model=schemas.Recinto)
